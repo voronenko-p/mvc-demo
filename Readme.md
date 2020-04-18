@@ -46,3 +46,5 @@ if($site -eq $null)
  New-WebApplication -Name $name   -Site $name  -PhysicalPath $physicalPath -ApplicationPool $name
 }
 ```
+
+Copy collected artifact to the created $physicalPath location
