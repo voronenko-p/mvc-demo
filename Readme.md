@@ -48,3 +48,10 @@ if($site -eq $null)
 ```
 
 Copy collected artifact to the created $physicalPath location
+
+
+Getting recording from simulator, kind of
+
+```
+Curl -o temp.json http://{url:port}/download
+```
