@@ -1,4 +1,4 @@
-msbuild Samples.AspNetMvc4.sln  /t:Rebuild /p:outdir="c:\outproject\\" /p:Configuration=Release /p:Platform="Any CPU"
+msbuild Samples.AspNetMvc4.sln  /t:Rebuild /p:outdir="c:\outproject\" /p:Configuration=Release /p:Platform="Any CPU"
 
 Ensure hosting server has minimal dependencies installed
 
