@@ -1,4 +1,14 @@
-msbuild Samples.AspNetMvc4.sln  /t:Rebuild /p:outdir="c:\outproject\" /p:Configuration=Release /p:Platform="Any CPU"
+
+call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\VsDevCmd.bat"
+
+or
+
+call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x86_amd64
+
+depending on visualstudio you have
+
+
+msbuild Samples.AspNetMvc4.sln  /t:Rebuild /p:outdir="c:\\outproject" /p:Configuration=Release /p:Platform="Any CPU"
 
 Ensure hosting server has minimal dependencies installed
 
