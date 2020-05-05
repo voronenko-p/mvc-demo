@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -46,6 +47,15 @@ namespace Samples.AspNetMvc4.Controllers
                           where key.StartsWith(prefix)
                           orderby key
                           select new KeyValuePair<string, string>(key, value);
+
+            Process currentProcessInfo = System.Diagnostics.Process.GetCurrentProcess();
+            var startTime = currentProcessInfo.StartTime;
+            TimeSpan startTimeSpan = (startTime.ToUniversalTime() - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc));
+            double unixTime = startTimeSpan.TotalSeconds;
+
+            ViewBag.ProcessID = currentProcessInfo.Id;
+            ViewBag.startTime = unixTime;
+            ViewBag.machineName = Environment.MachineName;
 
             return View(envVars.ToList());
         }

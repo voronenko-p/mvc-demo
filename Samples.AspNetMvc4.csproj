@@ -44,11 +44,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Datadog.Trace, Version=1.11.1.0, Culture=neutral, PublicKeyToken=def86d061d0d2eeb, processorArchitecture=MSIL">
-      <HintPath>packages\Datadog.Trace.1.11.1-prerelease\lib\net45\Datadog.Trace.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LATEST\net45\Datadog.Trace.dll</HintPath>
     </Reference>
     <Reference Include="Datadog.Trace.AspNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=def86d061d0d2eeb, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Datadog.Trace.AspNet.1.11.1-prerelease\lib\net45\Datadog.Trace.AspNet.dll</HintPath>
+      <HintPath>..\LATEST\net45\Datadog.Trace.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Datadog.Trace.ClrProfiler.Managed">
+      <HintPath>..\LATEST\net45\Datadog.Trace.ClrProfiler.Managed.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
