@@ -1,4 +1,5 @@
 using Datadog.Trace;
+using Datadog.Trace.Configuration;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,18 +18,22 @@ namespace Samples.AspNetMvc4.Controllers
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
+
+            // access the active scope through the global tracer (can return null)
+            var scope = Tracer.Instance.ActiveScope;
+
             Process currentProcessInfo = System.Diagnostics.Process.GetCurrentProcess();
             var startTime = currentProcessInfo.StartTime;
             TimeSpan startTimeSpan = (startTime.ToUniversalTime() - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc));
             long startTimeNanoSeconds = startTimeSpan.Ticks * 100;
 
-            // access the active scope through the global tracer (can return null)
-            var scope = Tracer.Instance.ActiveScope;
 
-            // add a tag to the span
-            scope.Span.SetTag("span.pid", currentProcessInfo.Id.ToString());
-            scope.Span.SetTag("span.starttime", startTimeNanoSeconds.ToString());
-            scope.Span.SetTag("span.zhostname", Environment.MachineName);
+            /*
+                        // add a tag to the span
+                        scope.Span.SetTag("span.pid", currentProcessInfo.Id.ToString());
+                        scope.Span.SetTag("span.starttime", startTimeNanoSeconds.ToString());
+                        scope.Span.SetTag("span.zhostname", Environment.MachineName);
+            */
             base.OnActionExecuting(filterContext);
         }
 

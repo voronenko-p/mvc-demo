@@ -1,3 +1,5 @@
+using Datadog.Trace;
+using Datadog.Trace.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +19,21 @@ namespace Samples.AspNetMvc4
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var settings = TracerSettings.FromDefaultSources();
+
+            settings.Integrations["AdoNet"].Enabled = false;
+            settings.Integrations["AspNet"].Enabled = true;
+            settings.Integrations["AspNetMvc"].Enabled = true;
+            settings.Integrations["AspNetWebApi2"].Enabled = true;
+            settings.Integrations["Wcf"].Enabled = true;
+            settings.Integrations["HttpMessageHandler"].Enabled = true;
+            settings.Integrations["WebRequest"].Enabled = true;
+            // create a new Tracer using these settings
+            var tracer = new Tracer(settings);
+
+            // set the global tracer
+            Tracer.Instance = tracer;
         }
     }
 }
