@@ -65,3 +65,11 @@ Getting recording from simulator, kind of
 ```
 Curl -o temp.json http://{url:port}/download
 ```
+
+
+--------------
+
+PROFILER_GUID  {846F5F1C-F9AE-4B07-969E-05C26BC060D8}  corresponds to
+
+
+C:\Program Files\Datadog\.NET Tracer\Datadog.Trace.ClrProfiler.Native.dll
