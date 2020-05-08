@@ -18,7 +18,7 @@ namespace Samples.AspNetMvc4.Controllers
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-
+/*
             // access the active scope through the global tracer (can return null)
             var scope = Tracer.Instance.ActiveScope;
 
@@ -28,12 +28,12 @@ namespace Samples.AspNetMvc4.Controllers
             long startTimeNanoSeconds = startTimeSpan.Ticks * 100;
 
 
-            /*
-                        // add a tag to the span
-                        scope.Span.SetTag("span.pid", currentProcessInfo.Id.ToString());
-                        scope.Span.SetTag("span.starttime", startTimeNanoSeconds.ToString());
-                        scope.Span.SetTag("span.zhostname", Environment.MachineName);
-            */
+            
+            // add a tag to the span
+            scope.Span.SetTag("span.pid", currentProcessInfo.Id.ToString());
+            scope.Span.SetTag("span.starttime", startTimeNanoSeconds.ToString());
+            scope.Span.SetTag("span.hostname", Environment.MachineName);
+*/
             base.OnActionExecuting(filterContext);
         }
 
@@ -61,7 +61,7 @@ namespace Samples.AspNetMvc4.Controllers
 
         public ActionResult Index()
         {
-            var prefixes = new[] { "COR_", "CORECLR_", "DD_", "DATADOG_" };
+            var prefixes = new[] { "COR_", "CORECLR_", "DD_", "DATADOG_", "foo" };
 
             var envVars = from envVar in Environment.GetEnvironmentVariables().Cast<DictionaryEntry>()
                           from prefix in prefixes
@@ -73,11 +73,12 @@ namespace Samples.AspNetMvc4.Controllers
 
             Process currentProcessInfo = System.Diagnostics.Process.GetCurrentProcess();
             var startTime = currentProcessInfo.StartTime;
+
             TimeSpan startTimeSpan = (startTime.ToUniversalTime() - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc));
-            long startTimeNanoSeconds = startTimeSpan.Ticks * 100;
+            var startTimeMilliseconds = Convert.ToUInt64(Math.Truncate(startTimeSpan.TotalMilliseconds));
 
             ViewBag.ProcessID = currentProcessInfo.Id;
-            ViewBag.startTime = startTimeNanoSeconds;
+            ViewBag.startTime = startTimeMilliseconds;
             ViewBag.machineName = Environment.MachineName;
 
             return View(envVars.ToList());
