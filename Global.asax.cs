@@ -1,5 +1,5 @@
-using Datadog.Trace;
-using Datadog.Trace.Configuration;
+//using Datadog.Trace;
+//using Datadog.Trace.Configuration;
 using log4net;
 using System;
 using System.Collections.Generic;
@@ -24,7 +24,7 @@ namespace Samples.AspNetMvc4
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             log4net.Config.XmlConfigurator.Configure();
-
+/*
             var settings = TracerSettings.FromDefaultSources();
 
             settings.Integrations["AdoNet"].Enabled = false;
@@ -64,6 +64,7 @@ namespace Samples.AspNetMvc4
 
             // set the global tracer
             Tracer.Instance = tracer;
+*/
         }
     }
 }

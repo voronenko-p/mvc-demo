@@ -43,17 +43,6 @@
       <HintPath>packages\AttributeRouting.3.5.6\lib\net40\AttributeRouting.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Datadog.Trace, Version=1.11.1.0, Culture=neutral, PublicKeyToken=def86d061d0d2eeb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\LATEST\net45\Datadog.Trace.dll</HintPath>
-    </Reference>
-    <Reference Include="Datadog.Trace.AspNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=def86d061d0d2eeb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\LATEST\net45\Datadog.Trace.AspNet.dll</HintPath>
-    </Reference>
-    <Reference Include="Datadog.Trace.ClrProfiler.Managed">
-      <HintPath>..\LATEST\net45\Datadog.Trace.ClrProfiler.Managed.dll</HintPath>
-    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
@@ -71,6 +60,14 @@
     </Reference>
     <Reference Include="Sigil, Version=4.7.0.0, Culture=neutral, PublicKeyToken=2d06c3494341c8ab, processorArchitecture=MSIL">
       <HintPath>packages\Sigil.4.7.0\lib\net45\Sigil.dll</HintPath>
+    </Reference>
+    <Reference Include="StackVista.Trace, Version=1.17.0.0, Culture=neutral, PublicKeyToken=6b12922542db680e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LATEST\net45\StackVista.Trace.dll</HintPath>
+    </Reference>
+    <Reference Include="StackVista.Trace.AspNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6b12922542db680e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LATEST\net45\StackVista.Trace.AspNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

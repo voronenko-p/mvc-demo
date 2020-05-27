@@ -1,5 +1,5 @@
-using Datadog.Trace;
-using Datadog.Trace.Configuration;
+//using Datadog.Trace;
+//using Datadog.Trace.Configuration;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -135,7 +135,7 @@ namespace Samples.AspNetMvc4.Controllers
 
             var currentServiceName = ConfigurationManager.AppSettings["DD_SERVICE_NAME"];
 
-
+/*
             using (var scope = Tracer.Instance.StartActive("external_service_call", serviceName: externalServiceName))
             {
 
@@ -150,6 +150,7 @@ namespace Samples.AspNetMvc4.Controllers
                     responseText = reader.ReadToEnd();
                 }
             }
+*/
             var finalResponse = String.Format("[RECEIVE] {0}/Home/Send" + "<br/>" + Environment.NewLine + "{1}", clientUrl, responseText);
             return Content(finalResponse);
         }
