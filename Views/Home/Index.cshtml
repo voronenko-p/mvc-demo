@@ -24,6 +24,18 @@
                 <th scope="row">Datadog.Trace.AspNet.dll </th>
                 <td>@typeof(Datadog.Trace.AspNet.TracingHttpModule).Assembly.Location</td>
             </tr>
+            <tr>
+                <th scope="row">Detected processID </th>
+                <td>@ViewBag.ProcessID</td>
+            </tr>
+            <tr>
+                <th scope="row">Detected start time in unix time </th>
+                <td>@ViewBag.startTime</td>
+            </tr>
+            <tr>
+                <th scope="row">Detected machine name </th>
+                <td>@ViewBag.machineName</td>
+            </tr>
         </tbody>
     </table>
 </div>
